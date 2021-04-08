@@ -9,6 +9,11 @@ const UserSchema = new Schema(
       trim: true,
       unique: true,
     },
+    uuid: {
+      type: String,
+      trim: true,
+      unique: true,
+    },
   },
   { strict: false }
 );

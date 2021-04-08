@@ -5,22 +5,22 @@ const Schema = mongoose.Schema;
 const ParametersSchema = new Schema({
   ref: "user",
 
-  interestage: {
+  p_age: {
     type: Array,
     required: true,
   },
 
-  interestsex: {
+  p_sex: {
     type: String,
     required: true,
   },
 
-  interestbodystyle: {
+  p_bodystyle: {
     type: String,
     required: true,
   },
 
-  interestrace: {
+  p_race: {
     type: String,
     required: true,
   },
