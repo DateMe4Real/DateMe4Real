@@ -8,13 +8,13 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/userdb");
 const userSeed = [
   {
     username: "WooHoo",
-    uuid: 1
+    uuid: 1,
   },
 
   {
     username: "yodabudda",
-    uuid: 2
-  }
+    uuid: 2,
+  },
 ];
 
 const profileSeed = [
@@ -23,8 +23,9 @@ const profileSeed = [
     dob: "01/01/1971",
     race: "White or European American",
     bodystyle: "Ectomorph",
-    bio: "Love adventures and the outdoors, understands me when I’m hangry, isn’t afraid to talk politics, is down to watch all three Back to the Future’s with me. ",
-    date: new Date(Date.now())
+    bio:
+      "Love adventures and the outdoors, understands me when I’m hangry, isn’t afraid to talk politics, is down to watch all three Back to the Future’s with me. ",
+    date: new Date(Date.now()),
   },
 
   {
@@ -32,28 +33,27 @@ const profileSeed = [
     dob: "08/01/1985",
     race: "Asian",
     bodystyle: "Mesomorph",
-    bio: "Love adventures and the outdoors, understands me when I’m hangry, isn’t afraid to talk politics, is down to watch all three Back to the Future’s with me. ",
-    date: new Date(Date.now())
-  }
+    bio:
+      "Love adventures and the outdoors, understands me when I’m hangry, isn’t afraid to talk politics, is down to watch all three Back to the Future’s with me. ",
+    date: new Date(Date.now()),
+  },
 ];
-
 
 const parameterSeed = [
   {
-    p_age: [30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44],
+    p_age: [30, 44],
     p_sex: "female",
     p_bodystyle: "Ectomorph",
-    p_race: "White or European American"
+    p_race: "White or European American",
   },
 
   {
-    p_age: [18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29],
+    p_age: [18, 29],
     p_sex: "female",
     p_bodystyle: "Mesomorph",
-    p_race: "White or European American"
-  }
+    p_race: "White or European American",
+  },
 ];
-
 
 const questionnaireSeed = [
   {
@@ -66,7 +66,7 @@ const questionnaireSeed = [
     q7: 9,
     q8: 10,
     q9: 4,
-    q10: 2
+    q10: 2,
   },
   {
     q1: 5,
@@ -78,57 +78,50 @@ const questionnaireSeed = [
     q7: 5,
     q8: 4,
     q9: 2,
-    q10: 6
-  }
+    q10: 6,
+  },
 ];
 
-db.Profile
-  .remove({})
+db.Profile.remove({})
   .then(() => db.Profile.collection.insertMany(profileSeed))
-  .then(data => {
+  .then((data) => {
     console.log(data.result.n + " Profiles inserted!");
     process.exit(0);
   })
-  .catch(err => {
+  .catch((err) => {
     console.error(err);
     process.exit(1);
   });
 
-
-db.Parameters
-  .remove({})
+db.Parameters.remove({})
   .then(() => db.Parameters.collection.insertMany(parameterSeed))
-  .then(data => {
+  .then((data) => {
     console.log(data.result.n + " Parameters inserted!");
     process.exit(0);
   })
-  .catch(err => {
+  .catch((err) => {
     console.error(err);
     process.exit(1);
   });
 
-
-db.Questionnaire
-  .remove({})
+db.Questionnaire.remove({})
   .then(() => db.Questionnaire.collection.insertMany(questionnaireSeed))
-  .then(data => {
+  .then((data) => {
     console.log(data.result.n + " Questionnaire inserted!");
     process.exit(0);
   })
-  .catch(err => {
+  .catch((err) => {
     console.error(err);
     process.exit(1);
   });
 
-
-db.User
-  .remove({})
+db.User.remove({})
   .then(() => db.User.collection.insertMany(userSeed))
-  .then(data => {
+  .then((data) => {
     console.log(data.result.n + " User inserted!");
     process.exit(0);
   })
-  .catch(err => {
+  .catch((err) => {
     console.error(err);
     process.exit(1);
   });

@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const ProfileSchema = new Schema({
-  ref: "user",
+  ref: "User",
 
   sex: {
     type: String,

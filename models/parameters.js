@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const ParametersSchema = new Schema({
-  ref: "user",
+  ref: "User",
 
   p_age: {
     type: Array,
