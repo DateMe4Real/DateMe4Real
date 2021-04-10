@@ -3,7 +3,8 @@
 module.exports = {
   User: require("./user"),
   Profile: require("./profile"),
-  Parameters: require("./parameters"),
-  Questionnaire: require("./questionnaire"),
+  Param: require("./param"),
+  Question: require("./question"),
   Match: require("./match"),
+  Prog: require("./prog"),
 };
