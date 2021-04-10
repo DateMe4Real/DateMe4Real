@@ -9,6 +9,6 @@ const QuestionSchema = new Schema({
   },
 });
 
-const Questionnaire = mongoose.model("Question", QuestionSchema);
+const Question = mongoose.model("Question", QuestionSchema);
 
 module.exports = Question;
