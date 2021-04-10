@@ -2,26 +2,29 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const MatchSchema = new Schema({
-  matches: {
+const ProgSchema = new Schema({
+  profile: {
     type: Boolean,
     required: true,
     default: false,
   },
-
-  userchoice: {
+  param: {
     type: Boolean,
     required: true,
     default: false,
   },
-
-  matched: {
+  question: {
+    type: Boolean,
+    required: true,
+    default: false,
+  },
+  completed: {
     type: Boolean,
     required: true,
     default: false,
   },
 });
 
-const Match = mongoose.model("Match", MatchSchema);
+const Prog = mongoose.model("Prog", ProgSchema);
 
-module.exports = Match;
+module.exports = Prog;
