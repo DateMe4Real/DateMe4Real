@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const QuestionnaireSchema = new Schema({
-  ref: "user",
+  ref: "User",
 
   q1: {
     type: Number,

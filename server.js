@@ -1,9 +1,6 @@
 const express = require("express");
 const session = require("express-session");
-// const MongoStore = require("connect-mongo");
 const mongoose = require("mongoose");
-
-const passport = require("./passport/setup");
 const auth = require("./routes/auth");
 
 const app = express();
@@ -30,10 +27,6 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/userdb");
 //     store: new MongoStore({ mongooseConnection: mongoose.connection }),
 //   })
 // );
-
-// Passport middleware
-app.use(passport.initialize());
-app.use(passport.session());
 
 // Routes
 app.use("/api/auth", auth);
