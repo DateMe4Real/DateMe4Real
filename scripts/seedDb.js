@@ -14,6 +14,7 @@ const userSeed = [
   {
     username: "yodabudda",
     uuid: 2,
+<<<<<<< HEAD
   },
 ];
 
@@ -115,6 +116,11 @@ db.Questionnaire.remove({})
     process.exit(1);
   });
 
+=======
+  },
+];
+
+>>>>>>> 4a9aefe71839fef45ed139a96f1b4c2bfd22d966
 db.User.remove({})
   .then(() => db.User.collection.insertMany(userSeed))
   .then((data) => {

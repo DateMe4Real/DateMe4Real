@@ -7,6 +7,7 @@ const QuestionSchema = require("./question").QuestionSchema;
 
 const Schema = mongoose.Schema;
 
+<<<<<<< HEAD
 const UserSchema = new Schema(
   {
     username: {
@@ -41,9 +42,23 @@ const UserSchema = new Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "param",
     },
+=======
+const UserSchema = new Schema({
+  username: {
+    type: String,
+    trim: true,
+    unique: true,
+>>>>>>> 4a9aefe71839fef45ed139a96f1b4c2bfd22d966
   },
+  uuid: {
+    type: String,
+    trim: true,
+    unique: true,
+  },
+},
   { strict: false }
 );
+
 
 const User = mongoose.model("User", UserSchema);
 
