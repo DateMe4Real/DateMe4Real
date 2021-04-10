@@ -93,8 +93,8 @@ db.Profile.remove({})
     process.exit(1);
   });
 
-db.Parameters.remove({})
-  .then(() => db.Parameters.collection.insertMany(parameterSeed))
+db.Param.remove({})
+  .then(() => db.Param.collection.insertMany(parameterSeed))
   .then((data) => {
     console.log(data.result.n + " Parameters inserted!");
     process.exit(0);
@@ -104,8 +104,8 @@ db.Parameters.remove({})
     process.exit(1);
   });
 
-db.Questionnaire.remove({})
-  .then(() => db.Questionnaire.collection.insertMany(questionnaireSeed))
+db.Question.remove({})
+  .then(() => db.Question.collection.insertMany(questionnaireSeed))
   .then((data) => {
     console.log(data.result.n + " Questionnaire inserted!");
     process.exit(0);

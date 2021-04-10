@@ -2,9 +2,7 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const ParametersSchema = new Schema({
-  ref: "User",
-
+const ParamSchema = new Schema({
   p_age: {
     type: Array,
     required: true,
@@ -26,6 +24,6 @@ const ParametersSchema = new Schema({
   },
 });
 
-const Parameters = mongoose.model("Parameters", ParametersSchema);
+const Param = mongoose.model("Param", ParamSchema);
 
-module.exports = Parameters;
+module.exports = Param;
