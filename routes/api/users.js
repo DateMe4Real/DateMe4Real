@@ -9,30 +9,31 @@ router
 
 // Matches with "/api/users/:id"
 router
-  .route("/:id")
+  .route("/id/:id")
   .get(usersController.findById)
   .put(usersController.update)
   .delete(usersController.remove);
 
-// Matches with "/api/users/:username"
+// Matches with "/api/users/username/:username"
 router
-  .route("/:username")
+  .route("/username/:username")
   .get(usersController.findByUserName)
   .put(usersController.update)
   .delete(usersController.remove);
 
 // Matches with "/api/users/:name"
  router
-  .route("/:name")
+  .route("/name/:name")
   .get(usersController.findByName)
   .put(usersController.update)
   .delete(usersController.remove);
 
 // Matches with "/api/users/:email"
 router
-  .route("/:email")
+  .route("/email/:email")
   .get(usersController.findByEmail)
   .put(usersController.update)
   .delete(usersController.remove);
+
 
 module.exports = router;
