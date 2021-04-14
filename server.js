@@ -12,7 +12,6 @@ app.use(express.urlencoded({ extended: false }));
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/userdb");
 
 // Routes
-
 app.use(routes);
 app.get("/", (req, res) => res.send("Good sunshine!"));
 
