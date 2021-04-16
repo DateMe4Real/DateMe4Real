@@ -23,12 +23,14 @@ module.exports = {
       .catch((err) => res.status(422).json(err));
   },
   userCheck2: function (req, res) {
-    console.log(req.body);
-    res.send("it worked!");
-
-    // db.User.create(req.body)
-    //   .then((dbModel) => res.json(dbModel))
-    //   .catch((err) => res.status(422).json(err));
+    // console.log("LOGING BODDY", req.params);
+    // res.send("it worked");
+    db.User.create(req.params)
+      .then((dbModel) => res.json(dbModel))
+      .catch((err) => {
+        console.log(err);
+        res.status(422).json(err);
+      });
   },
   findById: function (req, res) {
     db.user
