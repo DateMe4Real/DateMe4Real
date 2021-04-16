@@ -18,6 +18,9 @@ export default {
     return axios.post("/api/users", postData);
   },
   checkUser: function (uuid, username) {
-    return axios.post(`/userCheck/${uuid}/${username}`);
+    return axios.post(`/api/userCheck/${uuid}/${username}`);
+  },
+  checkUser2: function (_id, username) {
+    return axios.post(`/api/welcome/userCheck2/${_id}/${username}`);
   },
 };

@@ -9,18 +9,28 @@ module.exports = {
       .catch((err) => res.status(422).json(err));
   },
   userCheck: function (req, res) {
-    db.user
-      .findById(req.params.uuid)
+    db.User.findById(req.params.uuid)
       .then((dbModel) => {
         if (!dbModel) {
-          db.user
-            .create({ username: req.params.username, uuid: req.params.uuid })
-            .then((dbuser) => res.json(dbuser._id));
+          db.User.create({
+            username: req.params.username,
+            uuid: req.params.uuid,
+          }).then((dbuser) => res.json(dbuser._id));
         } else {
           (dbModel) => res.json(dbModel._id);
         }
       })
       .catch((err) => res.status(422).json(err));
+  },
+  userCheck2: function (req, res) {
+    // console.log("LOGING BODDY", req.params);
+    // res.send("it worked");
+    db.User.create(req.params)
+      .then((dbModel) => res.json(dbModel))
+      .catch((err) => {
+        console.log(err);
+        res.status(422).json(err);
+      });
   },
   findById: function (req, res) {
     db.user
